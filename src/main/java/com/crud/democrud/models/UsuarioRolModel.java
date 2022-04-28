@@ -42,4 +42,13 @@ public class UsuarioRolModel {
     public void setRol(String rol) {
         this.rol = rol;
     }
+
+    @Override
+    public String toString() {
+        return "UsuarioRolModel{" +
+                "idRol=" + idRol +
+                ", idUsuario=" + idUsuario +
+                ", rol='" + rol + '\'' +
+                '}';
+    }
 }

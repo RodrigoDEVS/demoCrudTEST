@@ -9,6 +9,8 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 
+import java.util.Optional;
+
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Rollback(false)
@@ -26,5 +28,24 @@ public class UsuarioRolRepositoryTest {
 
         Assertions.assertThat(savedRol).isNotNull();
         Assertions.assertThat(savedRol.getIdRol());
+    }
+
+    @Test
+    public void testListAll(){
+        Iterable<UsuarioRolModel> rol = repo.findAll();
+        Assertions.assertThat(rol).hasSizeGreaterThan(0);
+
+        for (UsuarioRolModel roles : rol){
+            System.out.println(roles);
+        }
+    }
+
+    @Test
+    public void testDelete(){
+        Long idRol = 5L;
+        repo.deleteById(idRol);
+
+        Optional<UsuarioRolModel> optionalRol = repo.findById(idRol);
+        Assertions.assertThat(optionalRol).isNotPresent();
     }
 }
