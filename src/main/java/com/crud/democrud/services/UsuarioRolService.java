@@ -22,4 +22,9 @@ public class UsuarioRolService {
     public UsuarioRolModel guardarRol(UsuarioRolModel usuarioRol){
         return usuarioRolRepository.save(usuarioRol);
     }
+
+    //Editar Rol
+    public UsuarioRolModel editarRol(UsuarioRolModel usuarioRol){
+        return usuarioRolRepository.save(usuarioRol);
+    }
 }
