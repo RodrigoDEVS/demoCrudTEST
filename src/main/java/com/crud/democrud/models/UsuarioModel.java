@@ -1,6 +1,9 @@
 package com.crud.democrud.models;
 
+import javax.management.relation.Role;
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "usuario")
@@ -14,6 +17,18 @@ public class UsuarioModel {
     private String nombre;
     private String email;
     private Integer prioridad;
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = "roles", @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "id_rol"))
+    private Set<Role> roles = new HashSet<>();
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 
     public void setPrioridad(Integer prioridad) {
         this.prioridad = prioridad;
