@@ -42,7 +42,7 @@ public class UsuarioRolRepositoryTest {
 
     @Test
     public void testDelete(){
-        Long idRol = 5L;
+        Long idRol = 7L;
         repo.deleteById(idRol);
 
         Optional<UsuarioRolModel> optionalRol = repo.findById(idRol);
