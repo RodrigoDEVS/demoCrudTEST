@@ -45,4 +45,13 @@ public class UsuarioController {
         }
     }
 
+    //Endopoit para Actualizar Usuario
+    @PutMapping("{id}")
+    public String updateNombreFromContacto(
+            @RequestBody UsuarioModel usuario,
+            @PathVariable(value="id") Long id
+    ) {
+        return "usuario actualizado";
+    }
+
 }

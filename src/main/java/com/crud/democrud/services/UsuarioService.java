@@ -12,7 +12,7 @@ import java.util.Optional;
 public class UsuarioService {
     @Autowired
     UsuarioRepository usuarioRepository;
-    
+
     public ArrayList<UsuarioModel> obtenerUsuarios(){
         return (ArrayList<UsuarioModel>) usuarioRepository.findAll();
     }
@@ -38,6 +38,20 @@ public class UsuarioService {
             return false;
         }
     }
+
+    //Servicio para Update
+    public Optional<UsuarioModel> updateUsuario(Long id, UsuarioModel usuario) {
+        return usuarioRepository.findById(id);
+    }
+
+/*
+    public UsuarioModel get(Long id) throws UserNotFoundException {
+        Optional<UsuarioModel> result = usuarioRepository.findById(id);
+        if(result.isPresent()){
+            return result.get();
+        }
+        throw new UserNotFoundException("No se pudo encontrar el usuario con el ID: "+ id);
+    }*/
 
 
     
