@@ -38,4 +38,8 @@ public class UsuarioService {
             return false;
         }
     }
+
+    public UsuarioModel actualizarUsuario(UsuarioModel usuario){
+        return usuarioRepository.save(usuario);
+    }
 }

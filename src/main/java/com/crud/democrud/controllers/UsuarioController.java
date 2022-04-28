@@ -44,4 +44,9 @@ public class UsuarioController {
             return "No pudo eliminar el usuario con id" + id;
         }
     }
+
+    @PostMapping("/edit")
+    public UsuarioModel actualizarUsuario(@RequestBody UsuarioModel usuario) {
+        return this.usuarioService.guardarUsuario(usuario);
+    }
 }

@@ -2,9 +2,11 @@ package com.crud.democrud.ControllerServiceTest;
 
 import com.crud.democrud.controllers.UsuarioController;
 import com.crud.democrud.models.UsuarioModel;
+import com.crud.democrud.models.UsuarioRolModel;
 import com.crud.democrud.repositories.UsuarioRepository;
 import com.crud.democrud.services.UsuarioService;
 import org.aspectj.lang.annotation.Before;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -40,5 +42,4 @@ public class UsuarioServiceMockTest {
     assertThat(usuarioService.obtenerUsuarios()).isEmpty();
     verify(usuarioRepository).findAll();
   }
-
 }
