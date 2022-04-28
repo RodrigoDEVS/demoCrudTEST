@@ -1,6 +1,7 @@
 package com.crud.democrud.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "roles")
@@ -13,6 +14,10 @@ public class UsuarioRolModel {
 
     private Long idUsuario;
     private String rol;
+
+    /*@ManyToMany(mappedBy = "roles")
+    private List<UsuarioModel> users;*/
+
 
     public Long getIdRol() {
         return idRol;
