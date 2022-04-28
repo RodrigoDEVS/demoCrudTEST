@@ -44,14 +44,4 @@ public class UsuarioController {
             return "No pudo eliminar el usuario con id" + id;
         }
     }
-
-    //Endopoit para Actualizar Usuario
-    @PutMapping("{id}")
-    public String updateNombreFromContacto(
-            @RequestBody UsuarioModel usuario,
-            @PathVariable(value="id") Long id
-    ) {
-        return "usuario actualizado";
-    }
-
 }

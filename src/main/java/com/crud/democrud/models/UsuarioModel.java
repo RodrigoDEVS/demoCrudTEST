@@ -18,9 +18,9 @@ public class UsuarioModel {
     private String email;
     private Integer prioridad;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(name = "roles", @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "id_rol"))
-    private Set<Role> roles = new HashSet<>();
+    //@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    //@JoinTable(name = "roles", joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "id_rol"))
+    /*private Set<Role> roles = new HashSet<>();
 
     public Set<Role> getRoles() {
         return roles;
@@ -28,7 +28,7 @@ public class UsuarioModel {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
-    }
+    }*/
 
     public void setPrioridad(Integer prioridad) {
         this.prioridad = prioridad;
