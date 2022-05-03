@@ -11,7 +11,6 @@ import org.springframework.test.annotation.Rollback;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@Rollback(false)
 public class UsuarioRepositoryJunitTest {
     @Autowired
     UsuarioRepository repo;

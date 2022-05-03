@@ -15,8 +15,9 @@ public class UsuarioRolModel {
     private Long idUsuario;
     private String rol;
 
-    /*@ManyToMany(mappedBy = "roles")
-    private List<UsuarioModel> users;*/
+    @OneToOne
+    @JoinColumn(name = "fk_usuario")
+    private UsuarioModel usuario;
 
 
     public Long getIdRol() {

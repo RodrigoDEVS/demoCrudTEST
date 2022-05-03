@@ -13,7 +13,6 @@ import java.util.Optional;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@Rollback(false)
 public class UsuarioRolRepositoryTest {
     @Autowired
     private UsuarioRolRepository repo;
